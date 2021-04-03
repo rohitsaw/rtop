@@ -1,0 +1,9 @@
+  [Desktop Entry]
+  Name=rtop
+  Comment=System monitor app made using flutter
+  Exec=rtop
+  Icon=${SNAP}/meta/gui/rtop.png # replace name to your app name
+  Terminal=false
+  Type=Application
+  Categories=Utilities; #adjust accordingly your snap category
+

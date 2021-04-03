@@ -1,0 +1,28 @@
+name: rtop
+version: 1.0.0
+summary: Flutter System Monitor
+description: System Monitor app made with Flutter
+
+confinement: strict
+base: core18
+grade: stable
+
+slots:
+  dbus-rtop: # adjust accordingly to your app name
+    interface: dbus
+    bus: session
+    name: com.example.rtop  # adjust accordingly to your app name and
+    
+apps:
+  rtop:
+    command: rtop
+    extensions: [flutter-dev] # Where "master" defines which Flutter channel to use for the build
+    plugs:
+    - network
+    slots:
+      - dbus-rtop
+parts:
+  rtop:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart # The main entry-point file of the application
